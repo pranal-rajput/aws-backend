@@ -18,7 +18,7 @@ module.exports.handler = async (event) => {
         }
         
         await dynamoDB.put(params).promise();
-        return successResponse({message: 'Booking created successfully', bookingId});
+        return successResponse({message: 'Booking Creation Completed!!!', bookingId});
     } catch {
         return errorResponse('Error creating booking', error);
     }
