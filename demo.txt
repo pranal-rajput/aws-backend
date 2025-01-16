@@ -1,0 +1,3 @@
+endpoints:
+  GET - https://8tkajbs5xc.execute-api.ap-south-1.amazonaws.com/dev/bookings
+  POST - https://8tkajbs5xc.execute-api.ap-south-1.amazonaws.com/dev/bookings
