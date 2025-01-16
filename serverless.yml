@@ -1,0 +1,25 @@
+service: booking-app-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-south-1
+  stage: ${opt:stage, 'dev'} # Default to 'dev' if not provided
+  environment:
+    BOOKINGS_TABLE: ${self:provider.stage}-bookings-table
+
+functions:
+  getBookings:
+    handler: handlers/getBookings.handler
+    events:
+      - http:
+          path: bookings
+          method: get
+
+  createBooking:
+    createBooking:
+    handler: handler.createBooking
+    events:
+      - http:
+          path: bookings
+          method: post
